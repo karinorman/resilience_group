@@ -11,8 +11,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r}
 library(tidyverse)
+library(here)
 
-invert <- read_csv("~/Documents/Projects/resilience/CarrizoInvertComp_2007-2015.csv")
-invert_id <- read_csv("~/Documents/Projects/resilience/CarrizoInvertInfo_2007-2015.csv")
+invert <- read_csv(paste0(here("data"), "/CarrizoInvertComp_2007-2015.csv"))
+invert_id <- read_csv(paste0(here('data', "/CarrizoInvertInfo_2007-2015.csv")
 ```
 
