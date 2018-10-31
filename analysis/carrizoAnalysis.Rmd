@@ -1,0 +1,18 @@
+---
+title: "Carrizo Stuffs"
+author: "Kari Norman"
+date: "10/31/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+
+invert <- read_csv("~/Documents/Projects/resilience/CarrizoInvertComp_2007-2015.csv")
+invert_id <- read_csv("~/Documents/Projects/resilience/CarrizoInvertInfo_2007-2015.csv")
+```
+
