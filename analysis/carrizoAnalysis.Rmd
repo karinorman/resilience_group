@@ -9,11 +9,27 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+Carl made a cool tool for dealing with data that can't be put up on a repo (whether because it's not shareable or because it's too big) called piggyback (https://github.com/ropensci/piggyback). The github read me gives a good explanation of how to set it up and what it does, but basically its a way to upload files as "assests" (i.e. attachements) to a repo. People can see the names of the attachments under the release of the repo but not the files themselves.
+
+```{r}
+library(piggyback)
+
+#to add files to a repo (only have to do this once)
+pb_track('data/*.csv') %>% #track all the csv files in the data folder
++     pb_upload(repo = 'karinorman/resilience_group') #upload all the files that are being tracked 
+
+#and to get it back! (this should stick the files in your data file)
+pb_download(repo = "karinorman/resilience_group")
+
+```
+
+
 ```{r}
 library(tidyverse)
 library(here)
 
 invert <- read_csv(paste0(here("data"), "/CarrizoInvertComp_2007-2015.csv"))
-invert_id <- read_csv(paste0(here('data', "/CarrizoInvertInfo_2007-2015.csv")
+invert_id <- read_csv(paste0(here('data'), "/CarrizoInvertInfo_2007-2015.csv"))
 ```
+
 
